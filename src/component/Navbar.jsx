@@ -20,7 +20,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor}) => (
 )
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, screenSize, setScreenSize, handleClick, currentColor } = useStateContext();
+  const { setActiveMenu, isClicked, screenSize, setScreenSize, handleClickActivate, handleClickDeActivate, currentColor } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -47,27 +47,27 @@ const Navbar = () => {
       <div className='flex'>
         <NavButton 
           title='Cart'
-          customFunc={() => handleClick('cart')}
+          customFunc={() => handleClickActivate('cart')}
           color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton 
           title='Chat'
           dotColor='#03C9D7'
-          customFunc={() => handleClick('cart')}
+          customFunc={() => handleClickActivate('cart')}
           color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton 
           title='Notifications'
           dotColor='#03C9D7'
-          customFunc={() => handleClick('notification')}
+          customFunc={() => handleClickActivate('notification')}
           color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content='Profile' position='BottomCenter'>
           <div className='flex items-center gap-2 cursor-pointer hover:bg-light-grey rounded-lg'
-            onClick={() => handleClick('userProfile')}>
+            onClick={() => handleClickActivate('userProfile')}>
               <img src={avatar} className='rounded-full w-8 h-8' alt="avatar" />
               <p>
                 <span className='text-gray-400 text-14'>Hi, </span> {' '}

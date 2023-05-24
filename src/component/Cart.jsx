@@ -7,7 +7,7 @@ import { cartData } from '../data/dummy';
 import { Button } from '.';
 
 const Cart = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, handleClickDeActivate } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">
@@ -55,6 +55,7 @@ const Cart = () => {
         </div>
         <div className="mt-5">
           <Button
+            handleClick={() => handleClickDeActivate('cart')}
             color="white"
             bgColor={currentColor}
             text="Place Order"
