@@ -15,8 +15,8 @@ const App = () => {
   const { theme, color } = getCurrentThemeAndColor();
 
   useEffect(() =>{
-    setCurentMode(theme)
-    setCurrentColor(color)
+    theme ? setCurentMode(theme) : setCurentMode('Light');
+    color ? setCurrentColor(color) : setCurrentColor('#03C9D7');
     
   }, [theme])
 
