@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -6,9 +5,10 @@ import { chatData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Notification = () => {
-  const { currentColor, handleClickDeActivate } = useStateContext();
+  const { currentColor, handleClickDeActivate} = useStateContext();
 
   return (
+    <div onClick={() => handleClickDeActivate('notifications')} className="bg-half-transparent w-full h-full fixed nav-item top-0 right-0 ">
     <div className="nav-item absolute right-5 md:right-40 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <div className="flex gap-3">
@@ -31,6 +31,7 @@ const Notification = () => {
           <Button handleClick={() => handleClickDeActivate('notifications')} color="white" bgColor={currentColor} text="See all notifications" borderRadius="10px" width="full" />
         </div>
       </div>
+    </div>
     </div>
   );
 };

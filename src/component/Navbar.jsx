@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -54,7 +54,7 @@ const Navbar = () => {
         <NavButton 
           title='Chat'
           dotColor='#03C9D7'
-          customFunc={() => handleClickActivate('cart')}
+          customFunc={() => handleClickActivate('chat')}
           color={currentColor}
           icon={<BsChatLeft />}
         />

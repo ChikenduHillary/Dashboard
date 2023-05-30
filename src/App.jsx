@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {  FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
 
 import { Sidebar, Navbar, ThemeSettings } from './component/index';
 import { Ecommerce, Orders, Employees, Customers, Calendar, Kanban, Editor, ColorPicker, Line, Area, Bar, Pie, Financial, ColorMapping, Pyramid, Stacked } from './pages/index';
@@ -23,7 +22,7 @@ const App = () => {
   return (
     <div className={ currentMode === 'Dark' ? 'dark' : '' }>
       <BrowserRouter>
-        <div className='flex relative dark:bg-main-dark-bg'>
+        <div className='flex relative dark:bg-main-dark-bg overflow-hidden'>
             <div className='fixed right-4 bottom-4' style={{zIndex: '1000'}}>
                 <TooltipComponent content='Settings' position='Top'>
                     <button type='button' onClick={() => setThemeSettings(true)} className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: currentColor, borderRadius: '50%'}}>
@@ -44,7 +43,7 @@ const App = () => {
               <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                 <Navbar />
               </div>
-              <div>
+              <div className='overflow-hidden'>
                 { themeSettings && <ThemeSettings /> }
                 <Routes>
                   {/* Dashboard */}
